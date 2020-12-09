@@ -46,3 +46,18 @@ function getFees()
         exit;
     }
 }
+
+function getPayment()
+{
+    global $connection;
+
+    try {
+        $sql =  'SELECT *  FROM recette';
+        $payment = $connection->query($sql);
+
+        return $payment;
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage();
+        exit;
+    }
+}

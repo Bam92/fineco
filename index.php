@@ -16,11 +16,13 @@
     ?>
 
     <h1>Paiement Frais Scolaire</h1>
+    <p><a href="./paymentView.php">Voir recette</a></p>
 
     <form method="POST">
-        <input type="text" name="name" id="" placeholder="nom de l'élève" required>
+        <input type="text" name="name" placeholder="nom de l'élève" required>
         <select name="description" required>
             <option value="">Choisir un motif</option>
+
             <?php foreach ($feeDesciptions as $feeDesciption) { ?>
 
             <option value="<?php echo $feeDesciption['description'] ?>">
@@ -29,9 +31,12 @@
 
             <?php } ?>
         </select>
-        <input type="number" name="amount" id="" placeholder="500" required>
-        <input type="text" name="currency" id="" placeholder="devise: cdf ou usd" required>
-        <input type="date" name="date" id="">
+        <input type="number" name="amount" laceholder="500" required>
+        <select name="currency" required>
+            <option value="CDF">CDF</option>
+            <option value="USD">USD</option>
+        </select>
+        <input type="date" name="date">
 
         <input type="submit" name="submit" value="Valider">
         <input type="resert" value="Annuler">

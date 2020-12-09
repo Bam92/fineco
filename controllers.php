@@ -3,6 +3,7 @@
 require "model.php";
 
 $feeDesciptions = getFees();
+$payments = getPayment();
 
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
