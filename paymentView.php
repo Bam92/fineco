@@ -13,6 +13,7 @@ require "controllers.php";
             <td>Montant</td>
             <td>Devise</td>
             <td>Motif</td>
+            <td>Date</td>
         </tr>
     </thead>
 
@@ -23,6 +24,8 @@ require "controllers.php";
         <td><?php echo $payment['amount'] ?></td>
         <td><?php echo $payment['currency'] ?></td>
         <td><?php echo $payment['description'] ?></td>
+        <td><?php echo $payment['d_date'] ?></td>
     </tr>
+
     <?php } ?>
 </table>

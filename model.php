@@ -4,9 +4,11 @@ require "connection.php";
 
 $connection = db_connect();
 
-function new_payment($name, $description, $amount, $currency, $d_date)
+function new_payment($paymentInfo)
 {
     global $connection;
+
+    list($name, $description, $amount, $currency, $d_date) = $paymentInfo;
     $new_input = array(
         'name'    => $name,
         'description'  => $description,
@@ -47,12 +49,12 @@ function getFees()
     }
 }
 
-function getPayment()
+function getPayments()
 {
     global $connection;
 
     try {
-        $sql =  'SELECT *  FROM recette';
+        $sql =  'SELECT *  FROM recette ORDER BY currency';
         $payment = $connection->query($sql);
 
         return $payment;

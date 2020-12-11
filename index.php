@@ -36,10 +36,10 @@
             <option value="CDF">CDF</option>
             <option value="USD">USD</option>
         </select>
-        <input type="date" name="date">
+        <input type="date" name="date" required>
 
         <input type="submit" name="submit" value="Valider">
-        <input type="resert" value="Annuler">
+        <input type="reset" value="Annuler">
     </form>
 </body>
 
