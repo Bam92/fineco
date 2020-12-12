@@ -4,7 +4,7 @@ require "connection.php";
 
 $connection = db_connect();
 
-function new_payment($paymentInfo)
+function new_payment(array $paymentInfo)
 {
     global $connection;
 

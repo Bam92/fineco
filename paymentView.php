@@ -20,11 +20,11 @@ require "controllers.php";
     <?php foreach ($payments as $payment) { ?>
 
     <tr>
-        <td><?php echo $payment['name'] ?></td>
-        <td><?php echo $payment['amount'] ?></td>
-        <td><?php echo $payment['currency'] ?></td>
-        <td><?php echo $payment['description'] ?></td>
-        <td><?php echo $payment['d_date'] ?></td>
+        <td><?= $payment['name'] ?></td>
+        <td><?= $payment['amount'] ?></td>
+        <td><?= $payment['currency'] ?></td>
+        <td><?= $payment['description'] ?></td>
+        <td><?= $payment['d_date'] ?></td>
     </tr>
 
     <?php } ?>
