@@ -1,5 +1,5 @@
 <h1>Paiement Frais Scolaire</h1>
-<p><a href="./paymentView.php">Voir recette</a></p>
+<p><a href="./controllers/listPayment.php">Voir recette</a></p>
 
 <p><?= $confirm_message ?? NULL; ?></p>
 

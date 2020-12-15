@@ -1,4 +1,5 @@
 <?php
+require_once "Payment.php";
 
 class PaymentModel
 {
@@ -40,7 +41,14 @@ class PaymentModel
     {
         try {
             $sql =  'SELECT *  FROM recette ORDER BY currency';
-            return $this->db->query($sql);
+            $result = $this->db->query($sql)->fetchAll();
+            // Convert query result to an array
+            $listPayment = array();
+            foreach ($result as $row) {
+                $paymentId = $row['id'];
+                $listPayment[$paymentId] = $this->buildPayment($row);
+            }
+            return $listPayment;
         } catch (PDOException $exception) {
             echo $sql . "<br>" . $exception->getMessage();
             exit;
@@ -56,5 +64,18 @@ class PaymentModel
             echo $sql . "<br>" . $exception->getMessage();
             exit;
         }
+    }
+
+    private function buildPayment(array $row)
+    {
+        $payment = new Payment();
+        $payment->setId($row['id']);
+        $payment->setName($row['name']);
+        $payment->setDescription($row['description']);
+        $payment->setAmount($row['amount']);
+        $payment->setCurrency($row['currency']);
+        $payment->setDate($row['d_date']);
+
+        return $payment;
     }
 }

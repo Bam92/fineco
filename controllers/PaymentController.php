@@ -8,7 +8,7 @@ $paymentModel = new PaymentModel($db);
 $allPayments = $paymentModel->getPayments();
 $allFees = $paymentModel->getFees();
 
-if (isset($_POST["submit"])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $paymentInfo = array(
         $name = $_POST["name"],
         $description = $_POST["description"],
